@@ -18,7 +18,7 @@ function EventCard({ event, user }) {
 
 
   function handleAddEvent() {
-    fetch('/customer_events', {
+    fetch('https://tamasha.onrender.com/customer_events', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

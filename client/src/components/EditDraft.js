@@ -25,7 +25,7 @@ function EditDraft() {
     })
 
     useEffect(() => {
-        fetch(`/events/${id}`)
+        fetch(`https://tamasha.onrender.com/events/${id}`)
             .then((res) => res.json())
             .then((data) => setDraft(data))
 
@@ -79,7 +79,7 @@ function EditDraft() {
         formData.append('organizer_id', user?.id)
 
 
-        fetch(`/drafts/${id}`, {
+        fetch(`https://tamasha.onrender.com/drafts/${id}`, {
             method: "PATCH",
             body: formData
         })

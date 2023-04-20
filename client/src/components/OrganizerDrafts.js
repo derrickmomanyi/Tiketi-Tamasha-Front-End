@@ -11,7 +11,7 @@ function OrganizerDrafts(){
     const { id } = useParams();
     
     useEffect(() => {
-        fetch(`/organizers/${id}/drafts`)
+        fetch(`https://tamasha.onrender.com/organizers/${id}/drafts`)
         .then((res) => res.json())
         .then((data) => {
             setDrafts(data)

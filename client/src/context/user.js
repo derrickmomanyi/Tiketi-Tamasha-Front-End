@@ -6,7 +6,7 @@ function UserProvider({ children }) {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch('/me')
+        fetch('https://tamasha.onrender.com/me')
         .then((response) => {
           if (response.ok) {
             response.json().then((user) => {

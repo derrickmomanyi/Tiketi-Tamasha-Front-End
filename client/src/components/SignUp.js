@@ -47,7 +47,7 @@ function SignUp() {
             setErrors("Passwords do not match");
         }
         else {
-            fetch('/customers', {
+            fetch('https://tamasha.onrender.com/customers', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -91,7 +91,7 @@ function SignUp() {
             setErrorsOrg("Passwords do not match");
         }
         else {
-            fetch('/organizers', {
+            fetch('https://tamasha.onrender.com/organizers', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -12,7 +12,7 @@ function CustomerEvents(){
 
 
     useEffect(() => {       
-        fetch(`/customers/${id}/events`)
+        fetch(`https://tamasha.onrender.com/customers/${id}/events`)
         .then((res) => res.json())
         .then((events) => {
             setCustomerEvents(events)

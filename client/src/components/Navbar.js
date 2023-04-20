@@ -14,7 +14,7 @@ function Navbar() {
 
 
     function handleClickLogout() {
-        fetch('/logout', {
+        fetch('https://tamasha.onrender.com/logout', {
             method: 'DELETE'
         })
             .then((res) => {

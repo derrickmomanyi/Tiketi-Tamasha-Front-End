@@ -22,7 +22,7 @@ function Login(){
         }
         // console.log(newLogin);
 
-        fetch('/login', {
+        fetch('https://tamasha.onrender.com/login', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

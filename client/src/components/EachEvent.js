@@ -17,7 +17,7 @@ function EachEvent(){
 
     
     useEffect(() => {
-        fetch(`/events/${id}`)
+        fetch(`https://tamasha.onrender.com/events/${id}`)
         .then((res) => res.json())
         .then(event => {
           setEvent(event);

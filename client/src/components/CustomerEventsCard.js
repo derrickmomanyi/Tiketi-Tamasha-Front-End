@@ -35,7 +35,7 @@ function CustomerEventsCard( { event, onDeleteEvent, eventId } ){
 
 
       function handleDeleteEvent(){
-        fetch(`/customer_events/${eventId}`, {
+        fetch(`https://tamasha.onrender.com/customer_events/${eventId}`, {
           method:'DELETE'
         })
         onDeleteEvent(eventId)            

@@ -43,7 +43,7 @@ function AddEventForm({ onAddDrafts }) {
     // formData.append('organizer_id', user?.id)
 
 
-    fetch("/events", {
+    fetch("https://tamasha.onrender.com/events", {
       method: "POST",
       body: formData
     })
