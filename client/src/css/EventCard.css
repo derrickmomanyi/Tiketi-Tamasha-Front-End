@@ -1,0 +1,80 @@
+.card{
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  margin:5px;
+  /* background-color: rgba(247, 242, 242, 0.747);         */
+  padding: 10px;
+  padding-bottom: 10px;
+  transition: 500ms;    
+  margin-bottom: 30px;
+ 
+    
+}
+.card-img-top{
+  height: auto;
+  max-height: 250px;    
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.card:hover {
+background-color: rgba(170, 164, 164, 0.575);
+cursor: pointer;
+}
+
+.card-title{
+
+float: left;
+font-size: 18px;
+color: #010b26;
+width: 85%;
+
+}
+
+.date-box{
+  margin-top: 2px;    
+  font-weight: 600;
+  float: left;    
+  position: relative;
+
+}
+
+.date-box span{
+color: #ff8000;
+margin-left: 0px;
+}
+
+
+label {
+display:block;
+color: rgba(0, 0, 0, 0.9);
+margin-top:10px;
+margin-bottom: -1.5em;
+font-size: 13px;
+position: relative;
+float: left;
+
+}
+
+.event-like{  
+  left: 30px;
+  top: -2px;
+  position: relative;
+}
+
+
+.fa-solid{
+transition: .1s;
+}
+
+.fa-solid:active{
+transform: scale(2);
+}
+
+.liked{
+color: red;
+}
+
+.fa-heart{
+margin-top: 5px;   
+}
