@@ -109,6 +109,14 @@ function EditDraft() {
                                 onChange={(e) => setTitle(e.target.value)}
                                 required />
                             <br />
+                            <label>Image</label>
+                            <input className="form-control form-control-lg"
+                                type="file"
+                                name='image'
+                                placeholder="Image"
+                                onChange={(e) => setImage(e.target.files[0])}
+                                required />
+                            <br />
                            
                             <label for="exampleFormControlInput1" class="form-label">Category</label>
                             <select value={category} onChange={(e) => setCategory(e.target.value)} className="form-control form-control-lg" name='category'>
