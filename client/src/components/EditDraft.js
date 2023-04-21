@@ -61,6 +61,8 @@ function EditDraft() {
 
     }, [draft]);
 
+    console.log(draft);
+
 
 
     function handleSubmit(e) {
@@ -109,7 +111,7 @@ function EditDraft() {
                                 onChange={(e) => setTitle(e.target.value)}
                                 required />
                             <br />
-                            <label>Image</label>
+                            <label for="exampleFormControlInput1" class="form-label">Image</label>
                             <input className="form-control form-control-lg"
                                 type="file"
                                 name='image'
