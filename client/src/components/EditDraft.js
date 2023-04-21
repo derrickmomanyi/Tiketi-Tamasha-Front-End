@@ -25,7 +25,7 @@ function EditDraft() {
     })
 
     useEffect(() => {
-        fetch(`https://tamasha.onrender.com/events/${id}`)
+        fetch(`https://tamasha.onrender.com/drafts/${id}`)
             .then((res) => res.json())
             .then((data) => setDraft(data))
 
