@@ -39,6 +39,7 @@ function OrganizerDraftsCard( {draft, draftId, onDeleteDraft} ){
         onDeleteDraft(draftId)            
       }
       
+      
 
       const handleRedirect = () => {      
         navigate(`/drafts/${draftId}`);

@@ -11,6 +11,9 @@ function EditDraft() {
     const { user } = useContext(UserContext);
     const { id } = useParams();
     const navigate = useNavigate();
+     const state = {
+         button: 1
+     };
     const [draft, setDraft] = useState({
         title: '',
         category: '',
@@ -47,6 +50,22 @@ function EditDraft() {
     const [image, setImage] = useState("")
 
 
+
+    // function handleDeleteDraft(){
+    //     fetch(`https://tamasha.onrender.com/drafts/${draftId}`, {
+    //       method:'DELETE'
+    //     })
+    //     onDeleteDraft(draftId)            
+    //   }
+
+    //   function onDeleteDraft(id){
+    //     const updatedDrafts = drafts.filter(draft => draft.id !== id)
+    //         setDrafts(updatedDrafts)
+    // }
+
+    
+
+
     useEffect(() => {
         setTitle(draft.title);
         setCategory(draft.category);
@@ -61,12 +80,10 @@ function EditDraft() {
 
     }, [draft]);
 
-    console.log(draft);
-
-
-
+ 
     function handleSubmit(e) {
         e.preventDefault()
+        if (state.button === 1) {
         const formData = new FormData();
         formData.append("title", title);
         formData.append("category", category);
@@ -89,6 +106,31 @@ function EditDraft() {
         })
             .then(res => res.json())
         navigate(`/organizers/${user?.id}/drafts`)
+       
+    }
+     if (state.button === 2) {
+        const formDataPost = new FormData();
+        formDataPost.append("title", title);
+        formDataPost.append("category", category);
+        formDataPost.append("hosted_by", hostedBy);
+        formDataPost.append("featuring", featuring);
+        formDataPost.append("dress_code", dressCode);
+        formDataPost.append("location", location);
+        formDataPost.append("date", date);
+        formDataPost.append("time", time);
+        formDataPost.append("tickets", tickets);
+        formDataPost.append("price", price);
+        formDataPost.append("description", description);
+        formDataPost.append("image", image);
+        
+
+        fetch(`https://tamasha.onrender.com/events`, {
+            method: "POST",
+            body: formDataPost
+        })
+            .then(res => res.json())
+            navigate("/");
+    }
     }
 
       
@@ -213,12 +255,13 @@ function EditDraft() {
                                 required />
                             <br /><br/>
 
-                            <button className="btn login btn-primary btn-lg" type="submit">Update Event</button><br/><br/><br/>
-                            <button className='btn  login btn-primary btn-lg'>Post</button>
+                            <button className="btn login btn-primary btn-lg" type="submit"  onClick={() => (state.button = 1)}>Update Event</button><br/><br/><br/>
+                            <button className='btn  login btn-primary btn-lg' type="submit" onClick={() => (state.button = 2)}>Post</button>
 
                         </div>
                     </div>
                 </div>
+                 
             </form>
         </>
     )
