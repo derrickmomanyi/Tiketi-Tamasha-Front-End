@@ -8,9 +8,9 @@ function EventTable( {price, endTimeFormatted, totalTicketsAvailable} ){
     const [VIPTicket, setVIPTicket] = useState(0);
     const [errorMessage, setErrorMessage] = useState("");
 
-    const earlyBirdPrice = price * 100;
-    const advancePrice = price * 200;
-    const VIPPrice = price * 400;
+    const earlyBirdPrice = price ;
+    const advancePrice = price * 2;
+    const VIPPrice = price * 4;
 
 
     const earlyBirdSubtotal = earlyBirdTicket * earlyBirdPrice;

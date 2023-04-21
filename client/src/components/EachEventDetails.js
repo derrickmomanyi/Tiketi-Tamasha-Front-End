@@ -3,7 +3,7 @@ import '../css/EachEventDetails.css';
 
 
 function EachEventDetails({ event }) {
-  const { title, description, image, hosted_by, featuring, dress_code, location, date, time } = event
+  const { title, description, image_url, hosted_by, featuring, dress_code, location, date, time } = event
   const dates = new Date(date);
   const dayInWords = dates.toLocaleString("default", { weekday: "long" }).slice(0, 3) // "WED"
   const day = dates.toLocaleString("default", { day: "numeric" })// "15"
@@ -44,7 +44,7 @@ function EachEventDetails({ event }) {
     <>
       <div className="all-details">
         <div className="details-img">
-          <img src={image} className="event-image" alt={title} />
+          <img src={image_url} className="event-image" alt={title} />
         </div>
         <div className="event-details">
           <div className="event-div">
