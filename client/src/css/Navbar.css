@@ -44,6 +44,15 @@
     transform: translate(325px, 8px);
   
 }
+.favourite{
+    transform: translate(230px, 15px);
+    font-size: 23px;
+
+}
+.favourite-icon{
+    transform: translate(-2px, -2px);
+
+}
 
 
 
