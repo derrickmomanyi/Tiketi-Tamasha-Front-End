@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .create-2{
     margin-left: 10%;
 }
@@ -13,4 +14,14 @@
 }
 .edit h3{
 margin-right: 10%;
+=======
+.create-2{
+    margin-left: 10%;
+}
+.create-style{
+    display: flex;
+    padding-top: 2%;
+    margin-left: 10%;
+
+>>>>>>> c496019 (patched)
 }

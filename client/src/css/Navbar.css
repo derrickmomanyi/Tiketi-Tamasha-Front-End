@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .home-name{
     transform: translate(200px, 1px);
     font-size: 23px;
@@ -56,3 +57,30 @@
 
 
 
+=======
+.home-icon{
+    margin-left: 40%;
+    font-size: 25px;
+    padding-top: 15px;
+    font-size: 25px;
+    padding-top: 15px;
+}
+.links{
+    transform: translate(300px, 15px);
+    font-size: 25px;
+    color: aqua;
+}
+.organizer-links{
+    display: flex;
+}
+.create{
+    transform: translate(450px, 15px);
+    font-size: 25px;
+
+}
+.event-org{
+    transform: translate(250px, 15px);
+    font-size: 25px;
+
+}
+>>>>>>> c496019 (patched)
