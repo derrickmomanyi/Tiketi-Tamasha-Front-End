@@ -1,6 +1,6 @@
 .card{
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
+  border-radius: 20px;
   margin:5px;
   /* background-color: rgba(247, 242, 242, 0.747);         */
   padding: 10px;
@@ -14,7 +14,7 @@
   height: auto;
   max-height: 250px;    
   object-fit: contain;
-  border-radius: 20px;
+  /* border-radius: 2px; */
 }
 
 .card:hover {
