@@ -1,25 +1,49 @@
+.home-name{
+    transform: translate(200px, 1px);
+    font-size: 23px;
+
+}
 .home-icon{
-    margin-left: 40%;
-    font-size: 25px;
-    padding-top: 15px;
-    font-size: 25px;
-    padding-top: 15px;
+    transform: translate(-4px, 0px);
+
 }
 .links{
-    transform: translate(300px, 15px);
-    font-size: 25px;
-    color: aqua;
+    transform: translate(100px, 15px);
+    font-size: 23px;
+    /* color: aqua; */
 }
 .organizer-links{
     display: flex;
 }
 .create{
-    transform: translate(450px, 15px);
-    font-size: 25px;
+    transform: translate(300px, 17px);
+    font-size: 23px;
+    /* width: 20vw; */
+
+}
+.create-icon{
+    transform: translate(-2px, -1px);
 
 }
 .event-org{
-    transform: translate(250px, 15px);
-    font-size: 25px;
+    transform: translate(250px, 3px);
+    font-size: 23px;
+    float: right;
+    /* width: 20vw; */
 
 }
+.draft{
+    transform: translate(-2px, 1px);
+
+}
+.logout{
+    transform: translate(245px, 8px);
+
+}
+.twin-btn{
+    transform: translate(325px, 8px);
+  
+}
+
+
+

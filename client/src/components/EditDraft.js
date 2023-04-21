@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from 'react-router-dom'
 import { UserContext } from "../context/user";
 import { useNavigate } from 'react-router-dom';
+import '../css/EditDraft.css';
+
 
 
 
@@ -94,11 +96,11 @@ function EditDraft() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <div className="card-addevent">
+                <div className="card-addevent edit">
                     <h3>Edit an Event</h3>
                     <div className="create-style">
                         <div className="create-1">
-                            <label>Title</label>
+                        <label for="exampleFormControlInput1" class="form-label">Title</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Title"
@@ -107,15 +109,8 @@ function EditDraft() {
                                 onChange={(e) => setTitle(e.target.value)}
                                 required />
                             <br />
-                            <label>Image</label>
-                            <input className="form-control form-control-lg"
-                                type="file"
-                                name='image'
-                                placeholder="Image"
-                                onChange={(e) => setImage(e.target.files[0])}
-                                required />
-                            <br />
-                            <label>Category</label>
+                           
+                            <label for="exampleFormControlInput1" class="form-label">Category</label>
                             <select value={category} onChange={(e) => setCategory(e.target.value)} className="form-control form-control-lg" name='category'>
                                 <option value="">Choose a category</option>
                                 <option value="Music">Music</option>
@@ -125,7 +120,7 @@ function EditDraft() {
                                 <option value="Theatre plays">Theatre plays</option>
                             </select>
                             <br />
-                            <label>Hosted By</label>
+                            <label for="exampleFormControlInput1" class="form-label">Hosted_by</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Hosted by?"
@@ -134,7 +129,7 @@ function EditDraft() {
                                 onChange={(e) => setHostedBy(e.target.value)}
                                 required />
                             <br />
-                            <label>Featuring</label>
+                            <label for="exampleFormControlInput1" class="form-label">Featuring</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Featuring"
@@ -143,7 +138,7 @@ function EditDraft() {
                                 onChange={(e) => setFeaturing(e.target.value)}
                                 required />
                             <br />
-                            <label>Dress Code</label>
+                            <label for="exampleFormControlInput1" class="form-label">Dress Code</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Dress code"
@@ -152,7 +147,7 @@ function EditDraft() {
                                 onChange={(e) => setDressCode(e.target.value)}
                                 required />
                             <br />
-                            <label>Location</label>
+                            <label for="exampleFormControlInput1" class="form-label">Location</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Location"
@@ -163,7 +158,7 @@ function EditDraft() {
                             <br />
                         </div>
                         <div className="create-2">
-                        
+                        <label for="exampleFormControlInput1" class="form-label">Date</label>
                             <input className="form-control form-control-lg"
                                 type="date"
                                 placeholder="Date"
@@ -172,7 +167,7 @@ function EditDraft() {
                                 onChange={(e) => setDate(e.target.value)}
                                 required />
                             <br />
-                            <label></label>
+                            <label for="exampleFormControlInput1" class="form-label">Time</label>
                             <input className="form-control form-control-lg"
                                 type="time"
                                 placeholder="Time"
@@ -181,7 +176,7 @@ function EditDraft() {
                                 onChange={(e) => setTime(e.target.value)}
                                 required />
                             <br />
-                            <label>Tickets</label>
+                            <label for="exampleFormControlInput1" class="form-label">Tickets</label>
                             <input className="form-control form-control-lg"
                                 type="number"
                                 placeholder="Tickets"
@@ -190,7 +185,7 @@ function EditDraft() {
                                 onChange={(e) => setTickets(e.target.value)}
                                 required />
                             <br />
-                            <label>Price</label>
+                            <label for="exampleFormControlInput1" class="form-label">Price</label>
                             <input className="form-control form-control-lg"
                                 type="number"
                                 placeholder="Price"
@@ -199,7 +194,7 @@ function EditDraft() {
                                 onChange={(e) => setPrice(e.target.value)}
                                 required />
                             <br />
-                            <label>Description</label>
+                            <label for="exampleFormControlInput1" class="form-label">Description</label>
                             <textarea className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Description"
@@ -209,7 +204,6 @@ function EditDraft() {
                             <br />
 
                             <button className="btn login btn-primary btn-lg" type="submit">Update Event</button>
-                            {/* <button className="btn login btn-primary btn-lg" type="submit">Approve Event</button> */}
                         </div>
                     </div>
                 </div>
