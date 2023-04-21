@@ -86,7 +86,6 @@ function OrganizerDraftsCard( {draft, draftId, onDeleteDraft} ){
                     </svg>
                   </button>
                 </i>
-                <button className='btn btn-success btn-sm' style={{marginTop:"8%",width:"13vw"}}>Post</button>
               </div>
             </div>
           </div>
