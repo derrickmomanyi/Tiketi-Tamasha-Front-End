@@ -91,7 +91,7 @@ function EditDraft() {
         navigate(`/organizers/${user?.id}/drafts`)
     }
 
-
+      
 
 
 
