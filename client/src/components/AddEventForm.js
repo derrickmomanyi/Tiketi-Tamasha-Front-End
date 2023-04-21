@@ -40,16 +40,16 @@ function AddEventForm({ onAddDrafts }) {
     formData.append("price", price);
     formData.append("description", description);
     formData.append("image", image);
-    // formData.append('organizer_id', user?.id)
+    formData.append('organizer_id', user?.id)
 
 
-    fetch("https://tamasha.onrender.com/events", {
+    fetch("https://tamasha.onrender.com/drafts", {
       method: "POST",
       body: formData
     })
     .then(res => res.json())
     .then(drafts => {
-      // onAddDrafts(drafts)
+      onAddDrafts(drafts)
       setTitle('')
       setImage('')
       setCategory('')
@@ -62,7 +62,7 @@ function AddEventForm({ onAddDrafts }) {
       setTime('')
       setTickets('')
       setPrice('')
-      // navigate(`/organizers/${user?.id}/drafts`)
+      navigate(`/organizers/${user?.id}/drafts`)
     })
    
     

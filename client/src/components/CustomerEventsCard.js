@@ -45,7 +45,7 @@ function CustomerEventsCard( { event, onDeleteEvent, eventId } ){
         <>
         <div className="card " style={{ width: '18rem'}}>
             <NavLink  to={`/events/${event.id}`}>
-                <img src={event.image} className="card-img-top"alt={event.title} />
+                <img src={event.image_url} className="card-img-top"alt={event.title} />
                 </NavLink>
                 <div className="card-body">                    
                     <div className="title-like">
