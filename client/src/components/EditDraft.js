@@ -211,9 +211,11 @@ function EditDraft() {
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
                                 required />
-                            <br />
+                            <br /><br/>
 
-                            <button className="btn login btn-primary btn-lg" type="submit">Update Event</button>
+                            <button className="btn login btn-primary btn-lg" type="submit">Update Event</button><br/><br/><br/>
+                            <button className='btn  login btn-primary btn-lg'>Post</button>
+
                         </div>
                     </div>
                 </div>
