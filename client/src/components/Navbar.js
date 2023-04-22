@@ -71,7 +71,7 @@ function Navbar() {
                                         : { color: '#008080', textDecoration: 'none' }
                                 }
                             >
-<svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" class="bi favourite-icon bi-star-fill" viewBox="0 0 16 16">
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi favourite-icon bi-star-fill" viewBox="0 0 16 16">
   <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
 </svg>
                                 FAVOURITES</NavLink>
@@ -130,7 +130,7 @@ function Navbar() {
                                             : { color: '#008080', textDecoration: 'none' }
                                     }
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="#008080" class="bi bi-plus-square create-icon" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="#008080" className="bi bi-plus-square create-icon" viewBox="0 0 16 16">
                                         <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
                                         <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
                                     </svg>
@@ -142,12 +142,12 @@ function Navbar() {
 
 
                             {user ? <NavLink to='/logout' onClick={handleClickLogout} ><button className="btn  logout btn-outline-success btn-sm" type="button" style={{ fontSize: "23px" }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" class="bi logout-icon bi-unlock-fill" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi logout-icon bi-unlock-fill" viewBox="0 0 16 16">
                                     <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z" />
                                 </svg>
                                 Logout</button></NavLink>
                                 : <NavLink to='/login'  ><button className="btn twin-btn btn-outline-success btn-sm me-md-2" type="button" style={{ fontSize: "23px" }}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi bi-lock-fill" viewBox="0 0 16 16">
                                         <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
                                     </svg>
                                     Login</button></NavLink>
@@ -158,7 +158,7 @@ function Navbar() {
                                 <NavLink to='/signup'>
 
                                     <button className="btn twin-btn btn-outline-success btn-sm" type="button" style={{ marginLeft: "10px", fontSize: "23px" }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" fill="currentColor" className="bi bi-person-fill-add" viewBox="0 0 16 16">
                                             <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                                             <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
                                         </svg>

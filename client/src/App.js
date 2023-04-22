@@ -23,6 +23,10 @@ function App() {
       .then((data) => setEvents(data))
   }, [])
 
+  const handleAddEvent = (newEvent) =>{
+    const updatedEvent = [...events, newEvent]
+    setEvents(updatedEvent)  
+  }
 
 
 
@@ -44,7 +48,7 @@ function App() {
             <Route path="/organizers/:id/drafts" element={<OrganizerDrafts />} />
             <Route path="addevent" element={<AddEvent />} />
             <Route path="/events/:id" element = {<EachEvent />} />           
-            <Route path="/drafts/:id" element = {<EditDraft />} />
+            <Route path="/drafts/:id" element = {<EditDraft onAddEvent = {handleAddEvent}/>} />
           </Route>
 
           <Route path="login" element={<Login />} />
