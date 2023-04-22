@@ -7,7 +7,7 @@ import '../css/EditDraft.css';
 
 
 
-function EditDraft() {
+function EditDraft({onAddEvent}) {
     const { user } = useContext(UserContext);
     const { id } = useParams();
     const navigate = useNavigate();
@@ -121,7 +121,8 @@ function EditDraft() {
         formDataPost.append("tickets", tickets);
         formDataPost.append("price", price);
         formDataPost.append("description", description);
-        formDataPost.append("image", image);
+        formDataPost.append("image", image)
+        formDataPost.append('organizer_id', user?.id);
         
 
         fetch(`https://tamasha.onrender.com/events`, {
@@ -129,6 +130,7 @@ function EditDraft() {
             body: formDataPost
         })
             .then(res => res.json())
+            .then((data) => onAddEvent(data))
             navigate("/");
     }
     }
