@@ -23,3 +23,8 @@ margin-top: 20px;
   display: flex;   
   gap: 10px;
 }
+.password-toggle{
+  transform: translate(490px, -35px);
+  border: 0;
+
+}
