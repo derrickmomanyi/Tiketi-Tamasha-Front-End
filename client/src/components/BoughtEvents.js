@@ -5,7 +5,7 @@ function BoughtEvents(){
 
     return(
         <>
-        
+        <h1>My bought Tickets</h1>
         
         </>
     )
