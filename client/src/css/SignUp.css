@@ -39,3 +39,8 @@
     text-align: center;
       color: #008080;
   }
+  .password-toggle-signup{
+    transform: translate(420px, -33px);
+    border: 0;
+    background-color: white;
+  }
