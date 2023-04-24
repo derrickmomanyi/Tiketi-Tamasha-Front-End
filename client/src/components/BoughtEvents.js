@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Events(){
+function BoughtEvents(){
 
     return(
         <>
@@ -10,4 +10,4 @@ function Events(){
         </>
     )
 }
-export default Events;
+export default BoughtEvents;

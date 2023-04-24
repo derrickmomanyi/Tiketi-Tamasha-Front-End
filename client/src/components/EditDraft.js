@@ -118,7 +118,7 @@ function EditDraft({onAddEvent}) {
         })
             .then(res => res.json())
             .then((newDraft) => handleEditDraft(newDraft))
-          navigate(`/organizers/${user?.id}/drafts`)
+          navigate(`/`)
        
     }
      if (state.button === 2) {

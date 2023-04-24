@@ -54,5 +54,14 @@
 
 }
 
+.bought{
+    transform: translate(265px, 15px);
+    font-size: 23px;
+}
+
+.bought-icon{
+    transform: translate(-2px, -2px);
+}
+
 
 

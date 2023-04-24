@@ -6,7 +6,7 @@ function DraftProvider({ children }) {
     const [drafts, setDrafts] = useState([]);
 
     useEffect(() => {
-        fetch('/drafts')
+        fetch('https://tamasha.onrender.com/drafts')
           .then((res) => res.json())
           .then((data) => setDrafts(data))
       }, [])
