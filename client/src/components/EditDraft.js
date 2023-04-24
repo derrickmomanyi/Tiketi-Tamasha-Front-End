@@ -10,8 +10,7 @@ import '../css/EditDraft.css';
 
 function EditDraft({onAddEvent}) {   
     const { user } = useContext(UserContext);
-    const { drafts, setDrafts} = useContext(DraftContext)  
-    console.log(drafts);  
+    const { drafts, setDrafts} = useContext(DraftContext)       
     const { id } = useParams();
     const navigate = useNavigate();      
      const state = {
@@ -66,6 +65,17 @@ function EditDraft({onAddEvent}) {
             setDrafts(updatedDrafts)
     }
 
+    function handleEditDraft(newDraft){
+        const updatedDrafts = drafts.map((draft) => {       
+            if (draft.id === newDraft.id) {
+                return newDraft
+            }else{
+            return draft;
+            }
+           })
+           setDrafts(updatedDrafts)
+    }
+
    
    
     useEffect(() => {
@@ -107,7 +117,8 @@ function EditDraft({onAddEvent}) {
             body: formData
         })
             .then(res => res.json())
-        navigate(`/organizers/${user?.id}/drafts`)
+            .then((newDraft) => handleEditDraft(newDraft))
+          navigate(`/organizers/${user?.id}/drafts`)
        
     }
      if (state.button === 2) {
