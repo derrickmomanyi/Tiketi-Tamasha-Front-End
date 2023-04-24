@@ -32,7 +32,8 @@ function OrganizerDraftsCard( {draft, draftId, onDeleteDraft} ){
         
       }
 
-      function handleDeleteDraft(){
+      function handleDeleteDraft(e){
+        e.preventDefault()
         fetch(`https://tamasha.onrender.com/drafts/${draftId}`, {
           method:'DELETE'
         })
@@ -41,9 +42,10 @@ function OrganizerDraftsCard( {draft, draftId, onDeleteDraft} ){
       
       
 
-      const handleRedirect = () => {      
+      const handleRedirect = () => {              
         navigate(`/drafts/${draftId}`);
       };
+     
 
         return(
         <>

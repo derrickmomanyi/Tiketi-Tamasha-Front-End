@@ -5,6 +5,7 @@ import OrganizerDraftsCard from "./OrganizerDraftsCard";
 
 
 
+
 function OrganizerDrafts(){
     const [drafts, setDrafts] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
@@ -33,11 +34,9 @@ function OrganizerDrafts(){
     
         <div className="row" style={{marginLeft:"8%"}}>
          {drafts.map((draft) => 
-        <OrganizerDraftsCard draft = {draft} key = {draft.id} draftId={ draft.id } onDeleteDraft={ onDeleteDraft }/>)}
-         
-        
-        
+        <OrganizerDraftsCard draft = {draft} key = {draft.id} draftId={ draft.id } onDeleteDraft={ onDeleteDraft }/>)}         
         </div>
+       
     )
 }
 export default OrganizerDrafts;

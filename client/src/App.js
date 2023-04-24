@@ -15,7 +15,7 @@ function App() {
 
   const [events, setEvents] = useState([])
   const [search, setSearch] = useState("")
- 
+
 
   useEffect(() => {
     fetch('/events')
@@ -27,8 +27,6 @@ function App() {
     const updatedEvent = [...events, newEvent]
     setEvents(updatedEvent)  
   }
-
-
 
   function handleSearch(e) {
     setSearch(e.target.value)
