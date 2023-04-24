@@ -3,7 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../context/user";
+import PasswordStrengthMeter from "./PasswordStrengthMeter";
+import PasswordStrengthMeterOrg from "./PasswordStrengthMeterOrg";
 import '../css/SignUp.css';
+
+
 
 
 function SignUp() {
@@ -16,6 +20,8 @@ function SignUp() {
     const [errors, setErrors] = useState(null)
     const [passwordType, setPasswordType] = useState("password");
     const [passwordConfirmationType, setPasswordConfirmationType] = useState("password");
+
+
     const togglePassword = () => {
         setPasswordType(passwordType === "password" ? "text" : "password");
     };
@@ -173,6 +179,8 @@ function SignUp() {
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                 </svg>}
                         </button>
+                        <PasswordStrengthMeter password={password} />
+
                         <br />
 
                         <input className="form-control"
@@ -192,6 +200,7 @@ function SignUp() {
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                 </svg>}
                         </button>
+
                         <br />
 
                         <p style={{ color: 'red' }}>{errors}</p>
@@ -249,6 +258,8 @@ function SignUp() {
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                 </svg>}
                         </button>
+                        <PasswordStrengthMeterOrg passwordOrg={passwordOrg} />
+
                         <br />
 
                         <input className="form-control"
@@ -268,6 +279,7 @@ function SignUp() {
                                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                                 </svg>}
                         </button>
+
                         <br />
 
                         <p style={{ color: 'red' }}>{errorsOrg}</p>
