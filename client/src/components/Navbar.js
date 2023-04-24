@@ -77,7 +77,17 @@ function Navbar() {
                                 FAVOURITES</NavLink>
                         </li> : null}
 
-                        {user && !user?.admin ? <li className="nav-item">My Tickets</li> : null}
+                        {user && !user?.admin ? <li className="nav-item">
+                            <NavLink to={`/customers/${user.id}/bought`}
+                            style={({ isActive }) =>
+                            isActive
+                                ? {
+                                    color: '#008080',
+                                    textDecoration: 'underline'
+                                }
+                                : { color: '#008080', textDecoration: 'none' }
+                        }
+                        >My Tickets</NavLink></li> : null}
 
 
                         <div className="organizer-links">

@@ -73,7 +73,7 @@ import React from "react";
     return(
         <>
         <button  type="button" className="btn btn-success calendar" onClick={handleClick}>SET REMINDER</button>        
-        <h1></h1>
+        
         </>
     )
 }
