@@ -10,6 +10,7 @@ import Layout from './components/Layout';
 import Home from './components/Home';
 import EachEvent from './components/EachEvent';
 import EditDraft from './components/EditDraft';
+import PurchasedEvents from './components/PurchasedEvents';
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch('/events')
+    fetch('https://tamasha.onrender.com/events')
       .then((res) => res.json())
       .then((data) => setEvents(data))
   }, [])
@@ -47,6 +48,7 @@ function App() {
             <Route path="addevent" element={<AddEvent />} />
             <Route path="/events/:id" element = {<EachEvent />} />           
             <Route path="/drafts/:id" element = {<EditDraft onAddEvent = {handleAddEvent}/>} />
+            <Route path = "/customers/:id/purchased" element = {<PurchasedEvents />} />
           </Route>
 
           <Route path="login" element={<Login />} />

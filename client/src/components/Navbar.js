@@ -77,6 +77,8 @@ function Navbar() {
                                 FAVOURITES</NavLink>
                         </li> : null}
 
+                        {user && !user?.admin ? <li className="nav-item">My Tickets</li> : null}
+
 
                         <div className="organizer-links">
                             {user?.admin ? <li className="nav-item event-org">
