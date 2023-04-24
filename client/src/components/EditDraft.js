@@ -2,15 +2,18 @@ import React, { useState, useEffect, useContext } from "react";
 import { useParams } from 'react-router-dom'
 import { UserContext } from "../context/user";
 import { useNavigate } from 'react-router-dom';
+import { DraftContext } from "../context/drafts";
 import '../css/EditDraft.css';
 
 
 
 
-function EditDraft() {
+function EditDraft({onAddEvent}) {   
     const { user } = useContext(UserContext);
+    const { drafts, setDrafts} = useContext(DraftContext)  
+    console.log(drafts);  
     const { id } = useParams();
-    const navigate = useNavigate();
+    const navigate = useNavigate();      
      const state = {
          button: 1
      };
@@ -51,21 +54,20 @@ function EditDraft() {
 
 
 
-    // function handleDeleteDraft(){
-    //     fetch(`https://tamasha.onrender.com/drafts/${draftId}`, {
-    //       method:'DELETE'
-    //     })
-    //     onDeleteDraft(draftId)            
-    //   }
+    function handleDeleteDraft(){
+        fetch(`https://tamasha.onrender.com/drafts/${id}`, {
+          method:'DELETE'
+        })
+         onDeleteDraft(id)        
+      }
 
-    //   function onDeleteDraft(id){
-    //     const updatedDrafts = drafts.filter(draft => draft.id !== id)
-    //         setDrafts(updatedDrafts)
-    // }
+      function onDeleteDraft(id){
+        const updatedDrafts = drafts.filter(draft => draft.id !== id)
+            setDrafts(updatedDrafts)
+    }
 
-    
-
-
+   
+   
     useEffect(() => {
         setTitle(draft.title);
         setCategory(draft.category);
@@ -121,7 +123,8 @@ function EditDraft() {
         formDataPost.append("tickets", tickets);
         formDataPost.append("price", price);
         formDataPost.append("description", description);
-        formDataPost.append("image", image);
+        formDataPost.append("image", image)
+        formDataPost.append('organizer_id', user?.id);
         
 
         fetch(`https://tamasha.onrender.com/events`, {
@@ -129,13 +132,15 @@ function EditDraft() {
             body: formDataPost
         })
             .then(res => res.json())
-            navigate("/");
+            .then((data) => {
+                onAddEvent(data)
+                handleDeleteDraft(data)
+        })
+            navigate(`/`);
     }
     }
 
       
-
-
 
     return (
         <>
@@ -144,7 +149,7 @@ function EditDraft() {
                     <h3>Edit an Event</h3>
                     <div className="create-style">
                         <div className="create-1">
-                        <label for="exampleFormControlInput1" class="form-label">Title</label>
+                        <label for="exampleFormControlInput1" className="form-label">Title</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Title"
@@ -153,7 +158,7 @@ function EditDraft() {
                                 onChange={(e) => setTitle(e.target.value)}
                                 required />
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Image</label>
+                            <label for="exampleFormControlInput1" className="form-label">Image</label>
                             <input className="form-control form-control-lg"
                                 type="file"
                                 name='image'
@@ -162,7 +167,7 @@ function EditDraft() {
                                 required />
                             <br />
                            
-                            <label for="exampleFormControlInput1" class="form-label">Category</label>
+                            <label for="exampleFormControlInput1" className="form-label">Category</label>
                             <select value={category} onChange={(e) => setCategory(e.target.value)} className="form-control form-control-lg" name='category'>
                                 <option value="">Choose a category</option>
                                 <option value="Music">Music</option>
@@ -172,7 +177,7 @@ function EditDraft() {
                                 <option value="Theatre plays">Theatre plays</option>
                             </select>
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Hosted_by</label>
+                            <label for="exampleFormControlInput1" className="form-label">Hosted_by</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Hosted by?"
@@ -181,7 +186,7 @@ function EditDraft() {
                                 onChange={(e) => setHostedBy(e.target.value)}
                                 required />
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Featuring</label>
+                            <label for="exampleFormControlInput1" className="form-label">Featuring</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Featuring"
@@ -190,7 +195,7 @@ function EditDraft() {
                                 onChange={(e) => setFeaturing(e.target.value)}
                                 required />
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Dress Code</label>
+                            <label for="exampleFormControlInput1" className="form-label">Dress Code</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Dress code"
@@ -199,7 +204,7 @@ function EditDraft() {
                                 onChange={(e) => setDressCode(e.target.value)}
                                 required />
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Location</label>
+                            <label for="exampleFormControlInput1" className="form-label">Location</label>
                             <input className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Location"
@@ -210,7 +215,7 @@ function EditDraft() {
                             <br />
                         </div>
                         <div className="create-2">
-                        <label for="exampleFormControlInput1" class="form-label">Date</label>
+                        <label for="exampleFormControlInput1" className="form-label">Date</label>
                             <input className="form-control form-control-lg"
                                 type="date"
                                 placeholder="Date"
@@ -219,7 +224,7 @@ function EditDraft() {
                                 onChange={(e) => setDate(e.target.value)}
                                 required />
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Time</label>
+                            <label for="exampleFormControlInput1" className="form-label">Time</label>
                             <input className="form-control form-control-lg"
                                 type="time"
                                 placeholder="Time"
@@ -228,7 +233,7 @@ function EditDraft() {
                                 onChange={(e) => setTime(e.target.value)}
                                 required />
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Tickets</label>
+                            <label for="exampleFormControlInput1" className="form-label">Tickets</label>
                             <input className="form-control form-control-lg"
                                 type="number"
                                 placeholder="Tickets"
@@ -237,7 +242,7 @@ function EditDraft() {
                                 onChange={(e) => setTickets(e.target.value)}
                                 required />
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Price</label>
+                            <label for="exampleFormControlInput1" className="form-label">Price</label>
                             <input className="form-control form-control-lg"
                                 type="number"
                                 placeholder="Price"
@@ -246,7 +251,7 @@ function EditDraft() {
                                 onChange={(e) => setPrice(e.target.value)}
                                 required />
                             <br />
-                            <label for="exampleFormControlInput1" class="form-label">Description</label>
+                            <label for="exampleFormControlInput1" className="form-label">Description</label>
                             <textarea className="form-control form-control-lg"
                                 type="text"
                                 placeholder="Description"
@@ -256,7 +261,7 @@ function EditDraft() {
                             <br /><br/>
 
                             <button className="btn login btn-primary btn-lg" type="submit"  onClick={() => (state.button = 1)}>Update Event</button><br/><br/><br/>
-                            <button className='btn  login btn-primary btn-lg' type="submit" onClick={() => (state.button = 2)}>Post</button>
+                            <button className='btn  login btn-primary btn-lg' type="submit" onClick={() => (state.button = 2)}>Post Event</button>
 
                         </div>
                     </div>

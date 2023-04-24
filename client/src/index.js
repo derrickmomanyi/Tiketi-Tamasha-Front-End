@@ -5,15 +5,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserProvider } from "./context/user";
+import { DraftProvider } from './context/drafts';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UserProvider>
-    
+    <DraftProvider>
       <App />
-    
+      </DraftProvider>
     </UserProvider>
   </React.StrictMode>
 );
