@@ -271,7 +271,7 @@ function EditDraft({onAddEvent}) {
                                 required />
                             <br /><br/>
 
-                            <button className="btn login btn-primary btn-lg" type="submit"  onClick={() => (state.button = 1)}>Update Event</button><br/><br/><br/>
+                            <button className="btn login btn-primary btn-lg" type="submit"  onClick={() => (state.button = 1)}>Edit Event</button><br/><br/><br/>
                             <button className='btn  login btn-primary btn-lg' type="submit" onClick={() => (state.button = 2)}>Post Event</button>
 
                         </div>

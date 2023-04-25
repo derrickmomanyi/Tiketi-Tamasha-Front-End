@@ -19,18 +19,14 @@ function PaymentForm(){
                         name="name"                     
                         required/>
                         <br/>
-    
+        
                         <input className="form-control"
-                        type="email"
-                        placeholder="Email"
-                        name="email"                   
-                        required/>
-                        <br/>  
-    
-                        <input className="form-control"
-                        type="number"
-                        placeholder="Phone Number"
-                        name="number"                   
+                        type="tel"
+                        placeholder="254xxxxxxxxx"
+                        pattern="[0-9]{12}"
+                        maxLength='12'
+                        minLength= '12'
+                        name="phone"                                          
                         required/><br/>
                                           
     

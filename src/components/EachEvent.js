@@ -6,7 +6,7 @@ import '../css/EachEvent.css';
 import EventTable from "./EventTable";
 import PaymentForm from "./PaymentForm";
 import EachEventDetails from "./EachEventDetails";
-import Calendar from "./Calendar";
+// import Calendar from "./Calendar";
 
 
 function EachEvent(){
@@ -44,7 +44,7 @@ function EachEvent(){
         <div className="event-body">
             <div className="event-title">
                  <h1>{title}</h1>
-                 <Calendar/>
+                 {/* <Calendar/> */}
                  <a href="#payment"><button  type="button" className="btn btn-danger">BUY TICKET</button></a>
             </div>
             <div className="event-details-body">
