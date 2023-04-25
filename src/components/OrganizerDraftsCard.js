@@ -70,9 +70,7 @@ function OrganizerDraftsCard( {draft, draftId, onDeleteDraft} ){
             </div>
           </div>
           <div className='flip-card-back'>
-            <img src={draft.image_url} className="card-img-top" alt={draft.title} />
-            {/* <p className="card-title">{draft.hosted_by}</p>/ */}
-            {/* <p className="card-title"> Featuring: {draft.featuring}</p> */}
+            <img src={draft.image_url} className="card-img-top" alt={draft.title} />           
             <div className='card-body'>
               
               <div className="edit-delete">
