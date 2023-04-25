@@ -1,18 +1,67 @@
-import React, { useState, useEffect} from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../context/user";
+import { useNavigate } from 'react-router-dom';
 
 
-function PaymentForm(){
+function PaymentForm({amount, id, earlyBirdTicket, advanceTicket, VIPTicket, totalTicketsAvailable, totalTickets, onEditEvent}){     
     const { user } = useContext(UserContext) 
     const [phoneNumber, setPhoneNumber] = useState("")
+    const navigate = useNavigate();
 
+
+    function ticketReduce(){
+    
+        const reduce = {
+            tickets: totalTicketsAvailable - totalTickets
+        }
+            
+        fetch(`https://tamasha.onrender.com/events/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(reduce)
+        })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+    }
+
+        function handleSubmit(e){
+            e.preventDefault()
+            const formData = {
+                phone_number : phoneNumber,
+                amount : amount,
+                early_bird: earlyBirdTicket,
+                advance: advanceTicket,
+                vip: VIPTicket,
+                customer_id: user ? user.id : 1,
+                event_id: id 
+            }
+
+
+            fetch('https://tamasha.onrender.com/bought_events', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData)
+            })
+            ticketReduce()
+            navigate(`/`)
+        
+    
+        }
+        
+      
+    
+      
     return(
         <div>
-        {user ?  <>
+        {user  ?  <>
         
             <h3 style={{marginLeft: "580px"}}>Enter Your Details</h3>
-                    <form >
+                    <form onSubmit={handleSubmit}>
                         <div >
                         <label>Phone Number</label>        
                         <input className="form-control"
@@ -21,7 +70,9 @@ function PaymentForm(){
                         pattern="[0-9]{12}"
                         maxLength='12'
                         minLength= '12'
-                        name="phone"                                                               
+                        name="phone" 
+                        value={phoneNumber}
+                        onChange={(e)=> setPhoneNumber(e.target.value)}                                                              
                         required/><br/>
 
                         
@@ -32,7 +83,7 @@ function PaymentForm(){
             
             
             </> 
-        : <h3 style={{marginLeft:"35%"}}>Login to access payment details</h3> }
+        : <h3 style={{marginLeft:"35%"}}>Login as a customer to purchase a ticket</h3> }
         </div>
       
     )

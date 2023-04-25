@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import PaymentForm from "./PaymentForm";
 
-function EventTable( {price, endTimeFormatted, totalTicketsAvailable} ){
+function EventTable( {price, endTimeFormatted, totalTicketsAvailable, id, onEditEvent} ){
+    
     const [earlyBirdTicket, setEarlyBirdTicket] = useState(0);
     const [advanceTicket, setAdvanceTicket] = useState(0);
     const [VIPTicket, setVIPTicket] = useState(0);
@@ -121,7 +122,7 @@ function EventTable( {price, endTimeFormatted, totalTicketsAvailable} ){
         
                 </table>
                 <div className="payment-details" id="payment">
-                    <PaymentForm />
+                    <PaymentForm  amount = {totalPrice} id = {id} earlyBirdTicket = {earlyBirdTicket} advanceTicket = {advanceTicket} VIPTicket = {VIPTicket} totalTicketsAvailable = {totalTicketsAvailable} totalTickets = {totalTickets} onEditEvent = {onEditEvent}/>
                     <div className="last-div">
 
                     </div>
