@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState } from "react";
 =======
 import React, { useState, useEffect} from "react";
 >>>>>>> ed3c551f (Modified node modules)
+=======
+import React, { useState } from "react";
+>>>>>>> 5a55c890 (Modified node modules)
 import { useContext } from "react";
 import { UserContext } from "../context/user";
 import { useNavigate } from 'react-router-dom';
@@ -12,9 +16,13 @@ function PaymentForm({amount, id, earlyBirdTicket, advanceTicket, VIPTicket, tot
     const { user } = useContext(UserContext) 
     const [phoneNumber, setPhoneNumber] = useState("")
 <<<<<<< HEAD
+<<<<<<< HEAD
     const navigate = useNavigate();
 =======
 >>>>>>> ed3c551f (Modified node modules)
+=======
+    const navigate = useNavigate();
+>>>>>>> 5a55c890 (Modified node modules)
 
 
     function ticketReduce(){
@@ -78,12 +86,18 @@ function PaymentForm({amount, id, earlyBirdTicket, advanceTicket, VIPTicket, tot
                         maxLength='12'
                         minLength= '12'
 <<<<<<< HEAD
+<<<<<<< HEAD
                         name="phone" 
                         value={phoneNumber}
                         onChange={(e)=> setPhoneNumber(e.target.value)}                                                              
 =======
                         name="phone"                                                               
 >>>>>>> ed3c551f (Modified node modules)
+=======
+                        name="phone" 
+                        value={phoneNumber}
+                        onChange={(e)=> setPhoneNumber(e.target.value)}                                                              
+>>>>>>> 5a55c890 (Modified node modules)
                         required/><br/>
 
                         

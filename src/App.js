@@ -57,6 +57,7 @@ function App() {
             <Route path="/organizers/:id/drafts" element={<OrganizerDrafts />} />
             <Route path="addevent" element={<AddEvent />} />
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Route path="/events/:id" element = {<EachEvent onEditEvent = {handleEditEvent}/>} />           
             <Route path="/drafts/:id" element = {<EditDraft onAddEvent = {handleAddEvent}/>} />
             <Route path = "/customers/:id/bought" element = {<BoughtEvents />} />
@@ -65,6 +66,16 @@ function App() {
             <Route path="/drafts/:id" element={<EditDraft onAddEvent={handleAddEvent} />} />
             <Route path="/customers/:id/bought" element={<BoughtEvents />} />
 >>>>>>> 56432df4 (working on responsiveness)
+=======
+            <Route path="/events/:id" element={<EachEvent />} />
+            <Route path="/drafts/:id" element={<EditDraft onAddEvent={handleAddEvent} />} />
+            <Route path="/customers/:id/bought" element={<BoughtEvents />} />
+=======
+            <Route path="/events/:id" element = {<EachEvent onEditEvent = {handleEditEvent}/>} />           
+            <Route path="/drafts/:id" element = {<EditDraft onAddEvent = {handleAddEvent}/>} />
+            <Route path = "/customers/:id/bought" element = {<BoughtEvents />} />
+>>>>>>> e492f2e8 (Added payment method and tickets reduce after purchase)
+>>>>>>> 5a55c890 (Modified node modules)
           </Route>
 
           <Route path="login" element={<Login />} />
