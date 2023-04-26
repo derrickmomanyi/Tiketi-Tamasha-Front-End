@@ -25,9 +25,14 @@ function BoughtEvents(){
     if (!isLoaded) return <h2>Loading...</h2>
      return(
         <>
+        <div className="container">
        <div className="row">
             {boughtEvents.map((events) => 
-            <BoughtEventsCard key = {events.id} event = {events.event} eventId = {events.id}/>)}
+            <div className="col-md-3">
+            <BoughtEventsCard key = {events.id} event = {events.event} eventId = {events.id}/>
+            </div>
+            )}
+       </div>
        </div>
         
         </>
