@@ -44,7 +44,7 @@ function EachEvent({onEditEvent}) {
                 <div className="event-title">
                     <h1>{title}</h1>
                     {/* <Calendar/> */}
-                    <a href="#payment"><button type="button" className="btn btn-danger">BUY TICKET</button></a>
+                    <a href="#payment"><button type="button" className="btn btn-danger btn-lg" style={{marginTop:"4px"}}>BUY TICKET</button></a>
                 </div>
                 <div className="event-details-body">
                     <EachEventDetails event={event} />

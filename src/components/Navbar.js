@@ -28,87 +28,62 @@ function Navbar() {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid" style={{ height: "6vh" }}>
-                    <p className="navbar-brand" style={{ color: "#008080", marginTop: "15px" }}>
-                        <strong style={{ marginLeft: "50%", fontSize: "34px" }}>TIKETI TAMASHA</strong>
-                    </p>
-                    <ul
-                        className="navbar-nav me-auto mb-2 mb-lg-0"
-                    // style={{ paddingLeft: "20%" }}
+                <div className="container">
+                    <a className="navbar-brand" href="/">TIKETI TAMASHA</a>
+
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
                     >
-                        <li className="nav-item home-name" >
-                            <NavLink to="/"
-                                style={({ isActive }) =>
-                                    isActive
-                                        ? {
-                                            color: '#008080',
-                                            textDecoration: 'underline'
-                                        }
-                                        : { color: '#008080', textDecoration: 'none' }
-                                }
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    width="26"
-                                    height="66"
-                                    fill="#008080"
-                                    className="bi home-icon bi-house-fill"
-                                    viewBox="0 0 16 16">
-                                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
-                                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
-                                </svg>
-                                HOME
-                            </NavLink>
-                        </li>
-
-                        {user && !user?.admin ? <li className="nav-item favourite">
-                            <NavLink to={`/customers/${user.id}/events`}
-                                style={({ isActive }) =>
-                                    isActive
-                                        ? {
-                                            color: '#008080',
-                                            textDecoration: 'underline'
-                                        }
-                                        : { color: '#008080', textDecoration: 'none' }
-                                }
-                            >
-<svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi favourite-icon bi-star-fill" viewBox="0 0 16 16">
-  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-</svg>
-                                FAVOURITES</NavLink>
-                        </li> : null}
-
-                        {user && !user?.admin ? <li className="nav-item bought">
-                            <NavLink to={`/customers/${user.id}/bought`}
-                            style={({ isActive }) =>
-                            isActive
-                                ? {
-                                    color: '#008080',
-                                    textDecoration: 'underline'
-                                }
-                                : { color: '#008080', textDecoration: 'none' }
-                        }
-                        ><svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi bi-cart-check-fill bought-icon" viewBox="0 0 16 16">
-                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
-                      </svg>
-                            MY TICKETS</NavLink></li> : null}
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
 
-                        <div className="organizer-links">
-                            {user?.admin ? <li className="nav-item event-org">
-                                <NavLink to={`/organizers/${user.id}/drafts`}
-                                    style={({ isActive }) =>
-                                        isActive
-                                            ? {
-                                                color: '#008080',
-                                                textDecoration: 'underline'
-                                            }
-                                            : { color: '#008080', textDecoration: 'none' }
-                                    }
-                                >
-                                    <svg fill="#008080" className="draft" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                        width="26px" height="66px" viewBox="0 0 31.854 31.854"
-                                    >
-                                        <path d="M15.94,11.735c0,0.588-0.476,1.064-1.065,1.064H5.298c-0.588,0-1.065-0.476-1.065-1.064c0-0.587,0.477-1.063,1.065-1.063
+
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav ml-auto" style={{ width: "100%" }}>
+                                <li className="nav-item home-name" >
+                                    <NavLink to="/" className="nav-link" >
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            width="26"
+                                            height="66"
+                                            fill="#008080"
+                                            className="bi home-icon bi-house-fill"
+                                            viewBox="0 0 16 16">
+                                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z" />
+                                            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z" />
+                                        </svg>
+                                        HOME
+                                    </NavLink>
+                                </li>
+
+                                {user && !user?.admin ? <li className="nav-item favourite">
+                                    <NavLink to={`/customers/${user.id}/events`} className="nav-link" >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi favourite-icon bi-star-fill" viewBox="0 0 16 16">
+                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                        </svg>
+                                        FAVOURITES</NavLink>
+                                </li> : null}
+
+                                {user && !user?.admin ? <li className="nav-item bought">
+                                    <NavLink to={`/customers/${user.id}/bought`} className="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi bi-cart-check-fill bought-icon" viewBox="0 0 16 16">
+                                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z" />
+                                    </svg>
+                                        MY TICKETS</NavLink></li> : null}
+
+
+                            <div className={`${user?.admin ? "organizer-links": ""}`}>
+                                {user?.admin ? <li className="nav-item event-org">
+                                    <NavLink to={`/organizers/${user.id}/drafts`} className="nav-link" >
+                                        <svg fill="#008080" className="draft" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                            width="26px" height="66px" viewBox="0 0 31.854 31.854"
+                                        >
+                                            <path d="M15.94,11.735c0,0.588-0.476,1.064-1.065,1.064H5.298c-0.588,0-1.065-0.476-1.065-1.064c0-0.587,0.477-1.063,1.065-1.063
 		h9.577C15.465,10.672,15.94,11.148,15.94,11.735z M21.52,11.087l5.342,4.791L15.535,28.505l-5.34-4.791L21.52,11.087z
 		 M20.008,16.188l-0.033-0.029c-0.127-0.114-0.293-0.172-0.461-0.163c-0.168,0.009-0.328,0.085-0.439,0.211l-6.079,6.776
 		c-0.253,0.281-0.229,0.713,0.052,0.965c0.126,0.115,0.291,0.174,0.461,0.164c0.168-0.01,0.327-0.086,0.44-0.213l6.108-6.81
@@ -129,62 +104,51 @@ function Navbar() {
 		c-0.014-0.576-0.484-1.054-1.064-1.054H5.298c-0.588,0-1.065,0.493-1.065,1.082c0,0.587,0.477,1.082,1.065,1.082h9.577
 		C14.9,16.344,14.925,16.342,14.949,16.341z M4.233,18.791c0,0.588,0.477,1.062,1.065,1.062H11.8l1.907-2.127H5.298
 		C4.71,17.727,4.233,18.203,4.233,18.791z"/>
-                                    </svg>
-                                    DRAFTS</NavLink>
-
-                            </li> : ''}
-
-                            {user?.admin ? <li className="nav-item create">
-                                <NavLink to="/addevent"
-                                    style={({ isActive }) =>
-                                        isActive
-                                            ? {
-                                                color: '#008080',
-                                                textDecoration: 'underline'
-                                            }
-                                            : { color: '#008080', textDecoration: 'none' }
-                                    }
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="#008080" className="bi bi-plus-square create-icon" viewBox="0 0 16 16">
-                                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
-                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                                    </svg>
-                                    CREATE</NavLink>
-                            </li> : ''}
-                        </div>
-
-                        <div className="d-grid  gap-2 d-md-flex justify-content-md-end" style={{ marginLeft: "700px", marginTop: "3px" }}>
-
-
-                            {user ? <NavLink to='/logout' onClick={handleClickLogout} ><button className="btn  logout btn-outline-success btn-sm" type="button" style={{ fontSize: "23px" }}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi logout-icon bi-unlock-fill" viewBox="0 0 16 16">
-                                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z" />
-                                </svg>
-                                Logout</button></NavLink>
-                                : <NavLink to='/login'  ><button className="btn twin-btn btn-outline-success btn-sm me-md-2" type="button" style={{ fontSize: "23px" }}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi bi-lock-fill" viewBox="0 0 16 16">
-                                        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
-                                    </svg>
-                                    Login</button></NavLink>
-
-                            }
-
-                            {user ? null :
-                                <NavLink to='/signup'>
-
-                                    <button className="btn twin-btn btn-outline-success btn-sm" type="button" style={{ marginLeft: "10px", fontSize: "23px" }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" fill="currentColor" className="bi bi-person-fill-add" viewBox="0 0 16 16">
-                                            <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                            <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
                                         </svg>
-                                        SignUp</button>
+                                        DRAFTS</NavLink>
 
-                                </NavLink>
-                            }
+                                </li> : ''}
 
+                                {user?.admin ? <li className="nav-item create">
+                                    <NavLink to="/addevent" className="nav-link" >
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="#008080" className="bi bi-plus-square create-icon" viewBox="0 0 16 16">
+                                            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                        </svg>
+                                        CREATE</NavLink>
+                                </li> : ''}
+                            </div>
 
-                        </div>
-                    </ul>
+                            {/* <div className="d-grid gap-2 d-md-flex justify-content-md-end" style={{ paddingTop: "1%" }} > */}
+
+                                {user ? <NavLink to='/logout' onClick={handleClickLogout} ><button className="btn  logout btn-outline-success" type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi logout-icon bi-unlock-fill" viewBox="0 0 16 16">
+                                        <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z" />
+                                    </svg>
+                                    Logout</button></NavLink>
+                                    : <NavLink to='/login'  ><button className="btn btn-outline-success" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" className="bi bi-lock-fill" viewBox="0 0 16 16">
+                                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                                        </svg>
+                                        Login</button></NavLink>
+
+                                }
+
+                                {user ? null :
+                                    <NavLink to='/signup'>
+
+                                        <button className="btn  btn-outline-success" type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="23" fill="currentColor" className="bi bi-person-fill-add" viewBox="0 0 16 16">
+                                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Zm-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                                <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Z" />
+                                            </svg>
+                                            SignUp</button>
+
+                                    </NavLink>
+                                }
+                            {/* </div> */}
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </>

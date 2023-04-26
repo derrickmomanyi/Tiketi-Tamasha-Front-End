@@ -13,23 +13,24 @@ function Home({ events, handleSearch, search }) {
 
     return (
         <>
-            <div className="home row" id="home">
-                <div className="transbox">
-                    <div className="text-home">
+            <div className="home container-fluid" id="home">
+                <div className="transbox row">
+                    <div className="text-home col">
                         { user ? <h3 style={{color:"white"}}>{"Hey, "  +  user.username.charAt(0).toUpperCase() + user.username.slice(1)}</h3 > : <h2 style={{color:'white'}}>An Event To Remember for Life!</h2>}
                         <p>Less work, more play. <br/> Whether you're into online streams, <br/> Weekend festivals or daytime get-togethers <br/> We have something for you. </p>
                         <form action="" className="searchbar">
-                            <input type="search" className="form-control icon" required name="search" value={search} onChange={handleSearch} placeholder="Search by name or category"></input>
+                            <input type="search" className="form-control" required name="search" value={search} onChange={handleSearch} placeholder="Search by name or category"></input>
                         </form>
                     </div>
                 </div>
-            </div><br />
+            </div>
 
-            <div className="events-body">
-                <div className="card-heading col-md-12">
+            <div className="container home-cards">
+
+            <div className="card-heading row">
                     <h2 >Events in Kenya</h2>
                     
-                    <div className="event-dropdown">
+                    <div className="event-dropdown ">
                     <select value={search} onChange={handleSearch} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         <option value="">Choose a category</option>
                         <option value="Music">Music</option>
@@ -39,15 +40,22 @@ function Home({ events, handleSearch, search }) {
                         <option value="Theatre plays">Theatre plays</option>
                     </select>
                     </div>
-                </div>
-                <div className="row">
+            </div>
+
+            <div className="row">
                     {events.map(event =>
    
+                         <div className="col-md-3">
                             <EventCard key={event.id} event={event} user= {user} />
+                        </div>
   
                     )}
                 </div>
+
+
             </div>
+
+            
 
 
         </>

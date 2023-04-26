@@ -1,4 +1,4 @@
-.home-name{
+/* .home-name{
     transform: translate(200px, 1px);
     font-size: 23px;
 
@@ -10,7 +10,6 @@
 .links{
     transform: translate(100px, 15px);
     font-size: 23px;
-    /* color: aqua; */
 }
 .organizer-links{
     display: flex;
@@ -18,7 +17,6 @@
 .create{
     transform: translate(300px, 17px);
     font-size: 23px;
-    /* width: 20vw; */
 
 }
 .create-icon{
@@ -29,7 +27,6 @@
     transform: translate(250px, 3px);
     font-size: 23px;
     float: right;
-    /* width: 20vw; */
 
 }
 .draft{
@@ -40,10 +37,10 @@
     transform: translate(245px, 8px);
 
 }
-.twin-btn{
+ .twin-btn{
     transform: translate(325px, 8px);
   
-}
+} 
 .favourite{
     transform: translate(230px, 15px);
     font-size: 23px;
@@ -61,7 +58,59 @@
 
 .bought-icon{
     transform: translate(-2px, -2px);
+} */
+
+
+
+ .nav-link {
+    color: #008080;
+    text-decoration: none;
+    font-size: 20px;
 }
+
+.nav-link:hover {
+    text-decoration: underline;
+    color: #008080;
+
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    color: #008080 !important;
+
+}
+.navbar-brand{
+    font-size: 27px;
+    color: #008080;
+    font-weight: bolder;
+    margin-right: 10%;
+
+}
+
+.home-name{
+    padding-top: 1.4%;
+    width: 15%;
+}
+.organizer-links{
+    display: flex;
+    width: 70%;
+    padding-top: 1.4%;
+    margin-left: -4%;
+}
+.create{
+    padding-top: 2%;
+}
+.favourite{
+    padding-top: 3%;
+    margin-left: -4%;
+}
+.bought{
+    padding-top: 3%;
+ 
+}
+/* .navbar{
+    height: 8vh;
+} */
 
 
 
