@@ -8,7 +8,7 @@ import EachEventDetails from "./EachEventDetails";
 // import Calendar from "./Calendar";
 
 
-function EachEvent() {
+function EachEvent({onEditEvent}) {
     const [isLoaded, setIsLoaded] = useState(false)
     const [event, setEvent] = useState([])
     // const { user } = useContext(UserContext) 
@@ -55,8 +55,7 @@ function EachEvent() {
                     <h6>Kindly indicate how many tickets you'd like</h6>
                 </div>
                 <div className="event-table">
-                    <EventTable price={price} endTimeFormatted={endTimeFormatted} totalTicketsAvailable={tickets} />
-
+                    <EventTable price={price} endTimeFormatted={endTimeFormatted} totalTicketsAvailable={tickets}  id={id} onEditEvent={onEditEvent} />
                 </div>
             </div>
 

@@ -11,7 +11,6 @@ import Home from './components/Home';
 import EachEvent from './components/EachEvent';
 import EditDraft from './components/EditDraft';
 import BoughtEvents from './components/BoughtEvents';
-import Navbar from './components/Navbar';
 
 function App() {
 
@@ -29,6 +28,17 @@ function App() {
     setEvents(updatedEvent)
   }
 
+  function handleEditEvent(newEvent){
+    const updatedEvents = events.map((event) => {       
+        if (event.id === newEvent.id) {
+            return newEvent
+        }else{
+        return event;
+        }
+       })
+       setEvents(updatedEvents)
+}
+
   function handleSearch(e) {
     setSearch(e.target.value)
   }
@@ -37,15 +47,13 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />
-
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home events={displayEvents} handleSearch={handleSearch} search={search} />} />
             <Route path="customers/:id/events" element={<CustomerEvents />} />
             <Route path="/organizers/:id/drafts" element={<OrganizerDrafts />} />
             <Route path="addevent" element={<AddEvent />} />
-            <Route path="/events/:id" element={<EachEvent />} />
+            <Route path="/events/:id" element={<EachEvent onEditEvent = {handleEditEvent}/>} />
             <Route path="/drafts/:id" element={<EditDraft onAddEvent={handleAddEvent} />} />
             <Route path="/customers/:id/bought" element={<BoughtEvents />} />
           </Route>
