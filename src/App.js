@@ -17,46 +17,50 @@ function App() {
   const [events, setEvents] = useState([])
   const [search, setSearch] = useState("")
 
-
   useEffect(() => {
     fetch('https://tamasha.onrender.com/events')
       .then((res) => res.json())
       .then((data) => setEvents(data))
   }, [])
 
-  const handleAddEvent = (newEvent) =>{
+  const handleAddEvent = (newEvent) => {
     const updatedEvent = [...events, newEvent]
-    setEvents(updatedEvent)  
+    setEvents(updatedEvent)
   }
+
+  function handleEditEvent(newEvent){
+    const updatedEvents = events.map((event) => {       
+        if (event.id === newEvent.id) {
+            return newEvent
+        }else{
+        return event;
+        }
+       })
+       setEvents(updatedEvents)
+}
 
   function handleSearch(e) {
     setSearch(e.target.value)
   }
 
   const displayEvents = events.filter(event => event.category.toLowerCase().includes(search.toLowerCase()) || event.title.toLowerCase().includes(search.toLowerCase()))
-  
 
   return (
     <BrowserRouter>
-      <div className="container-fluid">
-
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home events={displayEvents} handleSearch={handleSearch} search={search} />} />
             <Route path="customers/:id/events" element={<CustomerEvents />} />
             <Route path="/organizers/:id/drafts" element={<OrganizerDrafts />} />
             <Route path="addevent" element={<AddEvent />} />
-            <Route path="/events/:id" element = {<EachEvent />} />           
-            <Route path="/drafts/:id" element = {<EditDraft onAddEvent = {handleAddEvent}/>} />
-            <Route path = "/customers/:id/bought" element = {<BoughtEvents />} />
+            <Route path="/events/:id" element={<EachEvent onEditEvent = {handleEditEvent}/>} />
+            <Route path="/drafts/:id" element={<EditDraft onAddEvent={handleAddEvent} />} />
+            <Route path="/customers/:id/bought" element={<BoughtEvents />} />
           </Route>
 
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
         </Routes>
-
-
-      </div>
     </BrowserRouter>
   );
 }
