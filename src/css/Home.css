@@ -1,0 +1,61 @@
+/* .events-container {
+    margin-left: 2%;
+} */
+
+.home {
+    background-image: url("https://static1.squarespace.com/static/588f75c9d1758ed4bee19d6d/t/62aa3db189d0b3375b6277c7/1664237977770/DuvalFolx-42.jpg?format=1500w");
+    height: 50vh;
+    background-size: cover;
+}
+
+.transbox {
+    background-image: linear-gradient(to left, rgba(255, 0, 0, 0), rgb(15, 15, 15));
+    height: 50vh;
+}
+
+.text-home h1 {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.text-home p {
+    color: #ffffff;
+    font-size: 20px;
+
+}
+
+.text-home {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 6% 14%;
+
+}
+
+.card-heading {
+    /* text-align: center;    */
+    color: #000000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    display: flex;
+
+}
+
+.searchbar {
+    width: 24vw;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+.icon {
+    padding-left: 35px;
+    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+    background-size: 22px;
+    background-color: #ffffff;
+    background-position: 115px 8px;
+}
+/* .event-dropdown{
+    width: 25%;
+} */
