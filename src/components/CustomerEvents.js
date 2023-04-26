@@ -31,10 +31,15 @@ function CustomerEvents(){
     if (!isLoaded) return <h2>Loading...</h2>
     return(
         <>
+        <div className="container">
         <div className="row">
         {customerEvents.map((events) => 
-        <CustomerEventsCard key = {events.id} event = {events.event} onDeleteEvent={onDeleteEvent} eventId = {events.id}/>)} 
-        </div>      
+        <div className="col-md-3">
+        <CustomerEventsCard key = {events.id} event = {events.event} onDeleteEvent={onDeleteEvent} eventId = {events.id}/>
+        </div>
+        )} 
+        </div> 
+        </div>     
         </>
     )
 }
