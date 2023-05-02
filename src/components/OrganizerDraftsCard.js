@@ -49,7 +49,7 @@ function OrganizerDraftsCard( {draft, draftId, onDeleteDraft} ){
 
         return(
         <>
-<div className="card flip-card" style={{ width: '18rem' }}>
+<div className="card flip-card" style={{ width: '18rem',height:"24rem" }}>
         <div className='flip-card-inner'>
           <div className='flip-card-front'>
             <img src={draft.image_url} className="card-img-top" alt={draft.title} />
